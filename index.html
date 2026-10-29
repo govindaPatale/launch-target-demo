@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Adobe Launch Demo</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover your next favorite read at The Reading Nook, a demo bookstore for Adobe Target training.">
+  <title>The Reading Nook | Find Your Next Read</title>
+
+  <!-- Original pre-hiding snippet retained from the uploaded implementation. -->
   <script>
    //prehiding snippet for Adobe Target with asynchronous tags deployment
    ;(function(win, doc, style, timeout) {
@@ -37,29 +40,197 @@
    }(window, document, "body {opacity: 0 !important}", 3000));
   </script>
 
-  <!-- Adobe Launch -->
+  <!-- Existing Adobe Tags DEVELOPMENT embed retained exactly as provided. -->
   <script src="https://assets.adobedtm.com/666644a00be2/36b179fb4819/launch-dfcd6a67c6d6-development.min.js" async></script>
+
+  <style>
+    :root {
+      --navy:#202940; --muted:#5b6575; --cream:#fbfaf7; --paper:#fff;
+      --coral:#db694b; --coral-dark:#b84b31; --line:#e5e3de;
+      --mint:#e9f2ea; --soft:#f3eee6; --shadow:0 18px 60px rgba(32,41,64,.09);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--navy); background:var(--cream); line-height:1.5; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--coral); outline-offset:4px; }
+    .container { width:min(1140px,calc(100% - 48px)); margin-inline:auto; }
+    .site-header { background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); }
+    .site-header__inner { display:flex; justify-content:space-between; align-items:center; min-height:84px; gap:28px; }
+    .brand { display:inline-flex; gap:11px; align-items:center; font-weight:820; font-size:22px; text-decoration:none; letter-spacing:-.7px; white-space:nowrap; }
+    .brand__mark { width:39px; height:39px; display:grid; place-items:center; border-radius:12px; background:var(--coral); color:#fff; font-size:24px; line-height:1; }
+    .nav { display:flex; gap:28px; align-items:center; font-size:14px; font-weight:650; }
+    .nav a { text-decoration:none; }
+    .nav a:hover { color:var(--coral-dark); }
+    .nav__highlight { background:var(--mint); padding:9px 15px; border-radius:24px; font-size:12px; color:#35583e; }
+
+    .hero { padding:78px 0 82px; position:relative; overflow:hidden; }
+    .hero__inner { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:center; gap:66px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:#996043; background:#f7e9dc; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; padding:9px 14px; margin-bottom:23px; }
+    .eyebrow::before { content:""; height:7px; width:7px; border-radius:50%; background:var(--coral); }
+    #mvt-headline { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(45px,5.15vw,71px); letter-spacing:-2.3px; line-height:1.075; margin:0 0 23px; max-width:620px; }
+    #mvt-subheading { font-size:18px; line-height:1.8; color:var(--muted); max-width:570px; margin:0 0 31px; }
+    #mvt-cta { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:15px 29px; background:var(--coral); color:#fff; border-radius:9px; text-decoration:none; font-weight:750; font-size:15px; box-shadow:0 9px 25px rgba(219,105,75,.22); transition:background-color .18s ease,transform .18s ease; }
+    #mvt-cta:hover { background:var(--coral-dark); transform:translateY(-2px); }
+    .hero__note { margin-top:22px; color:var(--muted); font-size:13px; }
+    .hero__note strong { color:var(--navy); }
+    .hero-art { min-height:448px; border-radius:26px; background:linear-gradient(145deg,#e9f0e7 0%,#f8e9d6 100%); position:relative; display:grid; place-items:center; box-shadow:var(--shadow); overflow:hidden; }
+    .hero-art__circle { width:330px; height:330px; border-radius:50%; background:rgba(255,255,255,.57); position:absolute; right:-12px; top:30px; }
+    .book-stack { display:flex; align-items:flex-end; gap:13px; transform:rotate(-7deg); z-index:1; filter:drop-shadow(0 21px 14px rgba(37,49,51,.22)); }
+    .book { width:99px; height:242px; border-radius:5px 13px 13px 5px; box-shadow:inset -9px 0 rgba(0,0,0,.09); padding:16px 12px; display:flex; flex-direction:column; gap:12px; align-items:flex-start; color:#fff; border-left:5px solid rgba(255,255,255,.18); }
+    .book--one { background:#1c5e5b; height:226px; }
+    .book--two { background:#cc7654; height:268px; }
+    .book--three { background:#294469; height:244px; }
+    .book__line { height:2px; width:44px; background:rgba(255,255,255,.65); }
+    .book__mark { margin-top:auto; font-family:Georgia,serif; font-size:22px; font-weight:700; letter-spacing:-.5px; line-height:1.04; }
+    .art-tag { position:absolute; z-index:2; bottom:28px; right:26px; background:#fff; padding:14px 17px; box-shadow:0 8px 22px rgba(20,30,40,.1); border-radius:11px; display:flex; flex-direction:column; line-height:1.3; transform:rotate(4deg); }
+    .art-tag span { font-size:11px; color:var(--muted); }
+    .art-tag strong { font-size:14px; }
+
+    .benefits { background:#fff; border-block:1px solid var(--line); }
+    .benefits__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:26px 0; }
+    .benefit { display:flex; align-items:center; gap:15px; border-right:1px solid var(--line); }
+    .benefit:last-child { border:0; }
+    .benefit__icon { font-size:27px; background:#f8f5ef; width:48px; height:48px; flex:none; border-radius:13px; display:grid; place-items:center; }
+    .benefit strong { font-size:14px; display:block; margin-bottom:1px; }
+    .benefit p { color:var(--muted); font-size:12px; margin:0; }
+
+    .section { padding:77px 0; }
+    .section__heading { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:29px; }
+    .kicker { text-transform:uppercase; letter-spacing:1.7px; font-size:12px; color:var(--coral-dark); font-weight:800; margin:0 0 9px; }
+    .section h2 { font-family:Georgia,'Times New Roman',serif; letter-spacing:-1px; font-size:40px; margin:0; }
+    .section__intro { color:var(--muted); font-size:15px; margin:0; max-width:420px; }
+    .books { display:grid; grid-template-columns:repeat(3,1fr); gap:23px; }
+    .book-card { background:var(--paper); padding:17px; border:1px solid var(--line); border-radius:17px; box-shadow:0 6px 19px rgba(32,41,64,.035); }
+    .book-card__visual { height:230px; border-radius:11px; display:flex; justify-content:center; align-items:center; overflow:hidden; }
+    .book-card__visual--one { background:#e8efe9; }
+    .book-card__visual--two { background:#f5eae6; }
+    .book-card__visual--three { background:#e8e8f2; }
+    .mini-cover { height:179px; width:127px; border-radius:3px 9px 9px 3px; box-shadow:11px 14px 17px rgba(31,36,44,.2),inset -6px 0 rgba(0,0,0,.09); display:flex; flex-direction:column; justify-content:flex-end; padding:18px 13px; font-family:Georgia,'Times New Roman',serif; color:white; line-height:1.12; font-size:23px; }
+    .mini-cover--one { background:#356b5c; transform:rotate(-5deg); }
+    .mini-cover--two { background:#d17d64; transform:rotate(5deg); }
+    .mini-cover--three { background:#4e557f; transform:rotate(-3deg); }
+    .book-card__content { padding:16px 5px 4px; }
+    .book-card__genre { font-size:11px; text-transform:uppercase; color:var(--coral-dark); font-weight:820; letter-spacing:1.1px; }
+    .book-card h3 { font-size:21px; margin:7px 0 5px; letter-spacing:-.4px; }
+    .book-card p { font-size:14px; color:var(--muted); margin:0; }
+    .book-card__link { margin-top:16px; display:inline-block; font-weight:750; font-size:14px; color:var(--coral-dark); text-decoration:none; }
+    .book-card__link:hover { text-decoration:underline; }
+    .callout { background:var(--navy); color:#fff; border-radius:20px; padding:40px 48px; display:flex; gap:30px; justify-content:space-between; align-items:center; }
+    .callout h2 { font-size:31px; margin:0 0 8px; }
+    .callout p { max-width:560px; color:#dbe0e8; font-size:14px; margin:0; }
+    .callout a { padding:13px 20px; white-space:nowrap; background:#fff; color:var(--navy); text-decoration:none; border-radius:8px; font-size:14px; font-weight:750; }
+    .footer { padding:42px 0 50px; margin-top:45px; border-top:1px solid var(--line); }
+    .footer__inner { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    .footer p { font-size:12px; color:var(--muted); margin:0; }
+    .footer a { font-weight:650; font-size:13px; text-decoration:none; }
+    @media (max-width:850px) {
+      .hero__inner { grid-template-columns:1fr; gap:36px; }
+      .hero { padding:55px 0; }
+      .hero-art { min-height:340px; }
+      .books { grid-template-columns:repeat(2,1fr); }
+      .benefits__grid { gap:9px; }
+      .benefit { gap:9px; }
+    }
+    @media (max-width:620px) {
+      .container { width:min(100% - 32px,1140px); }
+      .site-header__inner { min-height:74px; }
+      .brand { font-size:18px; }
+      .nav { gap:14px; }
+      .nav__highlight { display:none; }
+      .hero-art { min-height:305px; }
+      .book { width:74px; height:184px; padding:12px 8px; }
+      .book--one { height:167px; }.book--two { height:205px; }.book--three { height:180px; }
+      .book__mark { font-size:16px; }
+      .book__line { width:30px; }
+      .art-tag { bottom:17px; right:14px; }
+      #mvt-headline { font-size:44px; }
+      #mvt-subheading { font-size:16px; }
+      .benefits__grid { grid-template-columns:1fr; gap:16px; padding:23px 0; }
+      .benefit { border:0; }
+      .books { grid-template-columns:1fr; }
+      .section { padding:54px 0; }
+      .section h2 { font-size:32px; }
+      .section__heading { display:block; }
+      .section__intro { margin-top:11px; }
+      .callout { flex-direction:column; align-items:flex-start; padding:31px 25px; }
+      .footer__inner { align-items:flex-start; flex-direction:column; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="The Reading Nook home"><span class="brand__mark" aria-hidden="true">✦</span>The Reading Nook</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <span class="nav__highlight">Adobe Target Training</span>
+      </nav>
+    </div>
+  </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero">
+  <main>
+    <section class="hero" id="hero" aria-label="Bookstore introduction">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="eyebrow">A little shelf of inspiration</div>
+          <!-- MVT LOCATION 1: Change Text on this heading in Adobe Target VEC. -->
+          <h1 id="mvt-headline">Find your next favorite book</h1>
+          <!-- MVT LOCATION 2: Change Text on this paragraph in Adobe Target VEC. -->
+          <p id="mvt-subheading">Discover handpicked stories, thoughtful nonfiction, and fresh ideas for every kind of reader.</p>
+          <!-- MVT LOCATION 3: Change Text on this CTA in Adobe Target VEC. Keep href and id unchanged. -->
+          <a id="mvt-cta" href="#featured-books" data-analytics="mvt-hero-cta-click">Browse featured books</a>
+          <p class="hero__note"><strong>For curious minds.</strong> A simple space to find something wonderful.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-art__circle"></div>
+          <div class="book-stack">
+            <div class="book book--one"><span class="book__line"></span><span class="book__line"></span><span class="book__mark">WILD<br>PLACES</span></div>
+            <div class="book book--two"><span class="book__line"></span><span class="book__line"></span><span class="book__mark">THE<br>OTHER<br>SHORE</span></div>
+            <div class="book book--three"><span class="book__line"></span><span class="book__line"></span><span class="book__mark">A<br>BRIGHT<br>IDEA</span></div>
+          </div>
+          <div class="art-tag"><span>New this season</span><strong>Stories worth sharing</strong></div>
+        </div>
+      </div>
+    </section>
 
-    <h1 id="hero-headline">
-      Welcome to Adobe Target MVT Demo
-    </h1>
+    <section class="benefits" aria-label="Reader benefits">
+      <div class="container benefits__grid">
+        <div class="benefit"><div class="benefit__icon" aria-hidden="true">📚</div><div><strong>Thoughtfully chosen</strong><p>Something for every reading mood</p></div></div>
+        <div class="benefit"><div class="benefit__icon" aria-hidden="true">✨</div><div><strong>Fresh discoveries</strong><p>Explore more than familiar favorites</p></div></div>
+        <div class="benefit"><div class="benefit__icon" aria-hidden="true">💬</div><div><strong>Made for readers</strong><p>Simple choices, inspiring stories</p></div></div>
+      </div>
+    </section>
 
-    <p id="hero-description">
-      This page is designed to demonstrate multivariate testing
-      using Adobe Target.
-    </p>
+    <section class="section" id="featured-books" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section__heading">
+          <div><p class="kicker">The curated shelf</p><h2 id="featured-title">Featured reads</h2></div>
+          <p class="section__intro">A few fictional sample titles to make this Adobe Target training site feel like a real bookstore.</p>
+        </div>
+        <div class="books">
+          <article class="book-card" id="book-quiet-atlas">
+            <div class="book-card__visual book-card__visual--one"><div class="mini-cover mini-cover--one" aria-hidden="true">The<br>Quiet<br>Atlas</div></div>
+            <div class="book-card__content"><span class="book-card__genre">Travel fiction</span><h3>The Quiet Atlas</h3><p>A journey through places and possibilities.</p><a class="book-card__link" href="about.html">Discover this title →</a></div>
+          </article>
+          <article class="book-card" id="book-blue-hour">
+            <div class="book-card__visual book-card__visual--two"><div class="mini-cover mini-cover--two" aria-hidden="true">Beyond<br>the<br>Blue Hour</div></div>
+            <div class="book-card__content"><span class="book-card__genre">Contemporary fiction</span><h3>Beyond the Blue Hour</h3><p>A hopeful story about unexpected beginnings.</p><a class="book-card__link" href="about.html">Discover this title →</a></div>
+          </article>
+          <article class="book-card" id="book-small-wonders">
+            <div class="book-card__visual book-card__visual--three"><div class="mini-cover mini-cover--three" aria-hidden="true">Small<br>Wonders</div></div>
+            <div class="book-card__content"><span class="book-card__genre">Mindful living</span><h3>Small Wonders</h3><p>Everyday ideas for a more curious life.</p><a class="book-card__link" href="about.html">Discover this title →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <button id="hero-cta">
-      Get Started
-    </button>
+    <section class="container" aria-label="About the collection">
+      <div class="callout"><div><h2>Every great story starts somewhere.</h2><p>Discover a little more about our demo bookstore and the reading experience behind it.</p></div><a href="about.html">About this bookstore</a></div>
+    </section>
+  </main>
 
-  </section>
-
+  <footer class="footer"><div class="container footer__inner"><a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">✦</span>The Reading Nook</a><p>Demo content for Adobe Target training • No purchases or checkout</p></div></footer>
 </body>
 </html>
