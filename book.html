@@ -195,6 +195,8 @@
   function sendProductView(){
      if(typeof window.alloy !== 'function'){ return; }
      window.alloy('sendEvent',{
+       // Ask Target for a named decision so it receives these entity attributes.
+       personalization:{decisionScopes:['reading-nook-product-view']},
        xdm:{eventType:'commerce.productViews',commerce:{productViews:{value:1}},web:{webPageDetails:{URL:location.href,name:item.name}}},
        data:{__adobe:{target:{'entity.id':item.id,'entity.name':item.name,'entity.categoryId':item.category,'entity.pageUrl':item.pageUrl,'entity.thumbnailUrl':item.thumbnailUrl,'entity.message':item.message,'entity.value':String(item.value),'entity.inventory':'10'}}},
        renderDecisions:false
