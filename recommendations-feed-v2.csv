@@ -1,0 +1,13 @@
+## RECSRecommendations Upload File
+## RECSPre-process header for Adobe Target Recommendations.
+## RECS
+## RECSOne product per data row; columns follow the Adobe CSV template.
+## RECSentity.id,entity.name,entity.categoryId,entity.message,entity.thumbnailUrl,entity.value,entity.pageUrl,entity.inventory,entity.margin,entity.last_updated_by,entity.multi_english,entity.availability,entity.tax_country,entity.tax_region,entity.tax_rate,entity.product_type,entity.item_group_id,entity.color,entity.size,entity.brand,entity.gtin
+RN-001,The Quiet Atlas,Travel Fiction,An imaginative journey across forgotten places.,https://placehold.co/600x800/b6d8cc/1f6055?text=RN-001,18,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-001,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-002,Beyond the Blue Hour,Contemporary Fiction,A hopeful story about unexpected beginnings.,https://placehold.co/600x800/b4caea/26476c?text=RN-002,16,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-002,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-003,The Curious Garden,Nature,A peaceful guide to noticing everyday wonders.,https://placehold.co/600x800/d7e7b8/3e5a29?text=RN-003,21,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-003,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-004,A Bright Idea,Nonfiction,Small inventions and the minds behind them.,https://placehold.co/600x800/f4d1a0/704620?text=RN-004,19,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-004,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-005,The Other Shore,Travel Fiction,A memorable voyage across an unfamiliar coastline.,https://placehold.co/600x800/c4c7e8/494878?text=RN-005,22,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-005,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-006,Paper Moons,Contemporary Fiction,An intimate tale of friendship and second chances.,https://placehold.co/600x800/edc9db/804961?text=RN-006,17,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-006,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-007,Wild Places,Nature,Stories from landscapes at the edge of the map.,https://placehold.co/600x800/c4dbbb/366446?text=RN-007,24,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-007,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
+RN-008,The Secret Index,Mystery,A trail of clues hidden in an unusual library.,https://placehold.co/600x800/d6c6eb/634a7c?text=RN-008,20,https://govindapatale.github.io/launch-target-demo/book.html?id=RN-008,10,0.30,csv,,in stock,,,,Books,,,,Reading Nook,
